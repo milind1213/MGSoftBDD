@@ -6,9 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import Utilities.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverFactory {
+	private static final String url = null;
+
 	public WebDriver driver;
 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
@@ -40,4 +44,10 @@ public class WebDriverFactory {
 	public static synchronized WebDriver getDriver() {
 		return tlDriver.get();
 	}
+
+	public static String getUrl() {
+		ConfigReader config = new ConfigReader();
+		return (String) config.init_prop().get("url");
+	}
+
 }

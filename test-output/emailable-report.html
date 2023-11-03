@@ -9,10 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">63,951</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">307,691</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">BDD.MGSoft.AppTest</td><td><a href="#m0">m1</a></td><td rowspan="1">1698685639119</td><td rowspan="1">63899</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestRunner.TestNG_TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1699018912873</td><td rowspan="1">21693</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">TestRunner.TestNG_TestRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="2">1699018949289</td><td rowspan="2">270419</td></tr><tr class="passedeven"><td><a href="#m2">runScenario</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">BDD.MGSoft.AppTest#m1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">TestRunner.TestNG_TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login with Valid Credentials&quot;</td><td>&quot;Society Admin Login Functionality Verification&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Failed to send keys to element [By.xpath: //input[@placeholder=&apos;Password&apos;]]
+	at org.testng.Assert.fail(Assert.java:111)
+	at Utilities.SeleniumCommon.sendKeys(SeleniumCommon.java:79)
+	at PageObjects.DashboardPage.societyAdminLogin(DashboardPage.java:79)
+	at StepDefinitions.AdminLoginSteps.the_user_logs_in_with_valid_email_and_password(AdminLoginSteps.java:23)
+	at ✽.the User logs in with Valid Email &quot;mamaearth@nobroker.com&quot; and Password &quot;nobroker1&quot;(file:///home/milind/Desktop/WebTestFolder/ProjectFirst/MGSoft/src/test/resources/Features/AdminLogin.feature:5)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestRunner.TestNG_TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validating the number of staff under the Manage Staff/Security option&quot;</td><td>&quot;Number of Staff/Security Verification&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestRunner.TestNG_TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Login with Invalid Credentials&quot;</td><td>&quot;Society Admin Login Functionality Verification&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

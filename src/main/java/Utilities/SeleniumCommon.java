@@ -25,6 +25,11 @@ public class SeleniumCommon {
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
+	public static WebElement waitForElementToBeClickable(WebDriver driver, WebElement element, int seconds) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+	    return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
 	public void waitForElementToAppear(WebElement ele, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.visibilityOf(ele));
@@ -43,6 +48,14 @@ public class SeleniumCommon {
 			System.err.println("Waited for element [" + ele + "] for " + seconds + " seconds");
 		}
 	}
+	
+	protected void waitForElementDisplay(By locator, int seconds) {
+	    try {
+	        new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.visibilityOfElementLocated(locator));
+	    } catch (Exception e) {
+	        System.err.println("Waited for element located by [" + locator + "] for " + seconds + " seconds");
+	    }
+	}
 
 	public void waitFor(int i) {
 		try {
@@ -52,14 +65,7 @@ public class SeleniumCommon {
 		}
 	}
 
-	protected void waitForElementDisplay(By locator, int timeoutSeconds) {
-		try {
-			new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
-					.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		} catch (Exception e) {
-			System.err.println("Waited for element [" + locator + "] for " + timeoutSeconds + " seconds");
-		}
-	}
+	
 
 	public void sendKeys(By locator, String text) {
 		try {
@@ -117,6 +123,22 @@ public class SeleniumCommon {
 		js.executeScript("arguments[0].style.border='3px solid red'", element);
 	}
 
+	
+	 public void scrollIntoView(WebElement element) {
+	        try {
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", element);
+	        } catch (Exception ex) {
+	            ex.printStackTrace();
+	            System.err.println("Failed to scroll to element.");
+	        }
+	    }
+	 
+	 
+	 public void scrollDown() {
+         JavascriptExecutor js = (JavascriptExecutor) driver;
+         js.executeScript("window.scrollBy(0,750)");
+     }
 
 	public void scrollUpto(By elementLocator) {
 		try {
@@ -141,14 +163,15 @@ public class SeleniumCommon {
 		js.executeScript("arguments[0].click();", element);
 	}
 
-	protected void waitForElementClickable(By locator, int timeoutSeconds) {
+	protected WebElement waitForElementClickable(WebElement webElement, int timeoutSeconds) {
 		try {
 			new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
-					.until(ExpectedConditions.elementToBeClickable(locator));
+					.until(ExpectedConditions.elementToBeClickable(webElement));
 		} catch (Exception e) {
 			System.err
-					.println("Waited for element [" + locator + "] to be clickable for " + timeoutSeconds + " seconds");
+					.println("Waited for element [" + webElement + "] to be clickable for " + timeoutSeconds + " seconds");
 		}
+		return webElement;
 	}
 
 	public void waitForOverlayToDisappear(By overlayElement, int timeoutSeconds) {

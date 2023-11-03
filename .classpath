@@ -36,6 +36,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/milind/snap/eclipse/73/amd64/plugins/org.testng_7.8.0.r202306071539.jar" sourcepath="/home/milind/snap/eclipse/71/amd64/plugins/org.testng.source_7.8.0.r202306071539.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/milind/snap/eclipse/73/amd64/plugins/org.testng_7.8.0.r202306071539.jar" sourcepath="/home/milind/snap/eclipse/71/amd64/plugins/org.testng.source_7.8.0.r202306071539.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
