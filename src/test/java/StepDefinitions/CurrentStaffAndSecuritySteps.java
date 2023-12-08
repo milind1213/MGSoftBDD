@@ -1,18 +1,18 @@
 package StepDefinitions;
 
-import DriverFactory.WebDriverFactory;
+import DriverFactory.WebBrowser;
 import PageObjects.DashboardPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CurrentStaffAndSecuritySteps {
-	private DashboardPage admin = new DashboardPage(WebDriverFactory.getDriver());
-	private String url = WebDriverFactory.getUrl();
+	private DashboardPage admin = new DashboardPage(WebBrowser.getDriver());
+	private String url = WebBrowser.getUrl();
 	
 	@Given("the user is on the landing page")
 	public void the_user_is_on_the_landing_page() {
-		WebDriverFactory.getDriver().get(url);
+		WebBrowser.getDriver().get(url);
 	}
 
 	@Given("the user is logged in with email {string} and password {string}")

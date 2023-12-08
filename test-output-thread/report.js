@@ -1,0 +1,4 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([{"id":"5cdfa42a-a512-4c58-b838-62f1f50a2c47","feature":"Society Admin Login Functionality Verification","scenario":"Login with Valid Credentials","start":1702036739696,"group":17,"content":"","tags":"","end":1702036757542,"className":"passed"},{"id":"45d282ad-042a-4969-96b7-158a9dc847c9","feature":"Society Admin Login Functionality Verification","scenario":"Login with Invalid Credentials","start":1702036739694,"group":18,"content":"","tags":"","end":1702036755343,"className":"passed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":17,"content":"Thread[TestNG-PoolService-0,5,main]"},{"id":18,"content":"Thread[TestNG-PoolService-1,5,main]"}]);
+});
